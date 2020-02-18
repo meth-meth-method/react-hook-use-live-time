@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState, Component } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import './App.css';
 
 const Unit = {
@@ -48,16 +48,24 @@ const Now = ({unit}) => {
   return date.toISOString();
 }
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <h2>Time is <Now unit={Unit.Second}/></h2>
-        </div>
+const App = () => {
+  const [unit, setUnit] = useState(5);
+
+  return (
+    <div className="App">
+      <div className="App-header">
+        <h2>Time is <Now unit={unit}/></h2>
+
+        <input
+          type="range"
+          min="0"
+          max="6"
+          value={unit}
+          onChange={event => setUnit(parseInt(event.target.value, 10))}
+        />
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default App;
