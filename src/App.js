@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+import React, { useState, Component } from 'react';
 import './App.css';
 
 const useLiveDate = () => {
-  return new Date();
+  const [date, setDate] = useState(new Date());
+  return date;
 }
 
 const Now = () => {
