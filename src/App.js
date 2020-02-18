@@ -43,8 +43,8 @@ const useLiveDate = (unit) => {
   return date;
 }
 
-const Now = () => {
-  const date = useLiveDate(Unit.MilliSecond);
+const Now = ({unit}) => {
+  const date = useLiveDate(unit);
   return date.toISOString();
 }
 
@@ -53,7 +53,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <h2>Time is <Now/></h2>
+          <h2>Time is <Now unit={Unit.Second}/></h2>
         </div>
       </div>
     );
