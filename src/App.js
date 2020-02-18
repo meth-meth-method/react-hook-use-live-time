@@ -1,4 +1,4 @@
-import React, { useEffect, useState, Component } from 'react';
+import React, { useEffect, useMemo, useState, Component } from 'react';
 import './App.css';
 
 const Unit = {
@@ -12,7 +12,8 @@ const Unit = {
 };
 
 const useLiveDate = (unit) => {
-  const [date, setDate] = useState(new Date());
+  const initial = useMemo(() => new Date(), []);
+  const [date, setDate] = useState(initial);
 
   useEffect(() => {
     const values = [
