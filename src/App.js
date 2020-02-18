@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
 
+const useLiveDate = () => {
+  return new Date();
+}
+
 const Now = () => {
-  const date = new Date();
+  const date = useLiveDate();
   return date.toISOString();
 }
 
