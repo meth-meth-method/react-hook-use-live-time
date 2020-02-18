@@ -1,6 +1,16 @@
 import React, { useEffect, useState, Component } from 'react';
 import './App.css';
 
+const Unit = {
+  Year: 0,
+  Month: 1,
+  Day: 2,
+  Hour: 3,
+  Minute: 4,
+  Second: 5,
+  MilliSecond: 6,
+};
+
 const useLiveDate = (unit) => {
   const [date, setDate] = useState(new Date());
 
@@ -33,7 +43,7 @@ const useLiveDate = (unit) => {
 }
 
 const Now = () => {
-  const date = useLiveDate(5);
+  const date = useLiveDate(Unit.Second);
   return date.toISOString();
 }
 
