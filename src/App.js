@@ -22,7 +22,7 @@ const useLiveDate = (unit) => {
       date.getHours(),
       date.getMinutes(),
       date.getSeconds(),
-      0,
+      date.getMilliseconds(),
     ].map((value, index) => {
       if (index === unit) {
         return value + 1;
@@ -43,7 +43,7 @@ const useLiveDate = (unit) => {
 }
 
 const Now = () => {
-  const date = useLiveDate(Unit.Second);
+  const date = useLiveDate(Unit.MilliSecond);
   return date.toISOString();
 }
 
